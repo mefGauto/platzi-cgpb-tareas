@@ -1,9 +1,13 @@
 var d = document.querySelector('#canvas');
 var lienzo = d.getContext("2d");
 
-lienzo.beginPath();
-lienzo.strokeStyle = "red";
-lienzo.moveTo(100, 100);
-lienzo.lineTo(200, 200);
-lienzo.stroke();
-lienzo.closePath()
+dibujarLinea("pink", 15, 78, 255, 25)
+
+function dibujarLinea(color, xInicial, yInicial, xFinal, yFinal){
+  lienzo.beginPath();
+  lienzo.strokeStyle = color;
+  lienzo.moveTo(xInicial, yInicial);
+  lienzo.lineTo(xFinal, yFinal);
+  lienzo.stroke();
+  lienzo.closePath()
+}
