@@ -4,10 +4,12 @@ let lineas = 30;
 let xI;
 let yF;
 
-for (let i = 0; i < lineas; i++){
-  dibujarLinea("orange", xI, 0, 300, yF)
-  xI = 10 * i;
-  yF = 10 * (i+ 1)
+document.querySelector('#boton').onclick = function(){
+  for (let i = 0; i < lineas; i++){
+    dibujarLinea("orange", xI, 0, 300, yF)
+    xI = 10 * i;
+    yF = 10 * (i+ 1)
+  }
 }
 // dibujarLinea("pink", 15, 78, 255, 25)
 
