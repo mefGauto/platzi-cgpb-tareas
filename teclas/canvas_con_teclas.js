@@ -5,12 +5,13 @@ let teclas = {
   RIGHT: 39
 };
 
-document.addEventListener("keyup", dibujarConFlechas)
+document.addEventListener("keyup", dibujarConFlechas);
 let canvas = document.querySelector('#canvas');
 let lienzo = canvas.getContext('2d');
-let x = 150;
-let y = 150;
+let x;
+let y;
 let colorcito = 'orange';
+let estado;
 
 dibujarLinea(colorcito, x-1, y-1, x+1, y+1)
 
@@ -43,5 +44,16 @@ function dibujarConFlechas(evento) {
       break;
     default:
       console.log('Con las flechas te dije, pibe')
+  }
+}
+
+canvas.addEventListener('mousemove', dibujarConMouse);
+
+function dibujarConMouse(evento){
+  if(evento.buttons == 1){
+    dibujarLinea(colorcito, x, y, evento.layerX, evento.layerY)
+  }else{
+    x = evento.layerX;
+    y = evento.layerY;
   }
 }
