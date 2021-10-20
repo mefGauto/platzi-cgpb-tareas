@@ -6,20 +6,40 @@ let teclas = {
 };
 
 document.addEventListener("keyup", dibujarConFlechas)
+let canvas = document.querySelector('#canvas');
+let lienzo = canvas.getContext('2d');
+let x = 150;
+let y = 150;
+let colorcito = 'orange';
+
+dibujarLinea(colorcito, x-1, y-1, x+1, y+1)
+
+function dibujarLinea(color, xInicial, yInicial, xFinal, yFinal){
+  lienzo.beginPath();
+  lienzo.strokeStyle = color;
+  lienzo.moveTo(xInicial, yInicial);
+  lienzo.lineTo(xFinal, yFinal);
+  lienzo.stroke();
+  lienzo.closePath()
+}
 
 function dibujarConFlechas(evento) {
   switch (evento.keyCode) {
     case teclas.UP:
-      console.log('Arrriba')
+      dibujarLinea(colorcito, x, y, x, y-10)
+      y = y - 10;
       break;
     case teclas.DOWN:
-      console.log('Abajo')
+      dibujarLinea(colorcito, x, y, x, y+10)
+      y = y + 10;
       break;
     case teclas.LEFT:
-      console.log('Izquierda')
+      dibujarLinea(colorcito, x, y, x -10, y)
+      x = x - 10;
       break;
     case teclas.RIGHT:
-      console.log('Derecha')
+      dibujarLinea(colorcito, x, y, x + 10, y)
+      x = x + 10;
       break;
     default:
       console.log('Con las flechas te dije, pibe')
