@@ -33,15 +33,7 @@ pollo.imagen.addEventListener('load', cargarPollos);
 function dibujar(){
   lienzo.drawImage(fondo, 0, 0);
 }
-function dibujarVacas(){
-  lienzo.drawImage(vaca, 10, 50);
-}
-function dibujarCerdos(){
-  lienzo.drawImage(cerdo, 250, 300);
-}
-function dibujarPollos(){
-  lienzo.drawImage(pollo, 400, 250)
-}
+
 function numAleatorio(min, max){
   let resultado;
   resultado = Math.floor(Math.random() * (max - min + 1) + min);
