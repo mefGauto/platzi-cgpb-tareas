@@ -1,8 +1,13 @@
-let z;
+let canvas = document.querySelector('#canvas');
+let lienzo = canvas.getContext('2d');
+let mapa = 'img/tile.png';
 
-for(let i = 0; i < 10; i++){
-  z = numAleatorio(0, 500);
-  document.write(z + ', ');
+let imagen = new Image();
+imagen.src = mapa;
+imagen.addEventListener('load', dibujar);
+
+function dibujar(){
+  lienzo.drawImage(imagen, 0, 0);
 }
 
 function numAleatorio(min, max){
