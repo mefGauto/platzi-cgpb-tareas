@@ -6,17 +6,29 @@ let fondo = new Image();
 fondo.src = mapa;
 fondo.addEventListener('load', dibujar);
 
-let vaca = new Image();
-vaca.src = 'img/vaca.png';
-vaca.addEventListener('load', dibujarVacas);
+let vaca = {
+  url: 'img/vaca.png',
+  carga: false
+};
+vaca.imagen = new Image();
+vaca.imagen.src = 'img/vaca.png';
+vaca.imagen.addEventListener('load', cargarVacas);
 
-let cerdo = new Image();
-cerdo.src = 'img/cerdo.png';
-cerdo.addEventListener('load', dibujarCerdos);
+let cerdo = {
+  url: 'img/cerdo.png',
+  carga: false
+};
+cerdo.imagen = new Image();
+cerdo.imagen.src = 'img/cerdo.png';
+cerdo.imagen.addEventListener('load', cargarCerdos);
 
-let pollo = new Image();
-pollo.src = 'img/pollo.png';
-pollo.addEventListener('load', dibujarPollos);
+let pollo = {
+  url: 'img/pollo.png',
+  carga: false
+};
+pollo.imagen = new Image();
+pollo.src.imagen = 'img/pollo.png';
+pollo.imagen.addEventListener('load', cargarPollos);
 
 function dibujar(){
   lienzo.drawImage(fondo, 0, 0);
