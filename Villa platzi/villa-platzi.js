@@ -1,6 +1,8 @@
 let canvas = document.querySelector('#canvas');
 let lienzo = canvas.getContext('2d');
 
+let cantidad = numAleatorio(0, 5);
+
 let fondo = {
   url: 'img/tile.png',
   carga: false
@@ -55,19 +57,31 @@ function dibujar(){
     lienzo.drawImage(fondo.imagen, 0, 0);
   }
   if(vaca.carga){
-    let x = numAleatorio(0, 420);
-    let y = numAleatorio(0, 420);
-    lienzo.drawImage(vaca.imagen, x, y);
+    for (let v = 0; v < cantidad; v++){
+      let x = numAleatorio(0, 5);
+      let y = numAleatorio(0, 5);
+      x = x * 80;
+      y = y * 80;
+      lienzo.drawImage(vaca.imagen, x, y);
+    }
   }
   if(cerdo.carga){
-    let x = numAleatorio(0, 420);
-    let y = numAleatorio(0, 420);
-    lienzo.drawImage(cerdo.imagen, x, y);
+    for (let c = 0; c < cantidad; c++){
+      let x = numAleatorio(0, 5);
+      let y = numAleatorio(0, 5);
+      x = x * 80;
+      y = y * 80;
+      lienzo.drawImage(cerdo.imagen, x, y);
+    }
   }
   if(pollo.carga){
-    let x = numAleatorio(0, 420);
-    let y = numAleatorio(0 , 420);
-    lienzo.drawImage(pollo.imagen, x, y);
+    for (let p = 0; p < cantidad; p++){
+      let x = numAleatorio(0, 5);
+      let y = numAleatorio(0, 5);
+      x = x * 80;
+      y = y * 80;
+      lienzo.drawImage(pollo.imagen, x, y);
+    }
   }
 }
 
