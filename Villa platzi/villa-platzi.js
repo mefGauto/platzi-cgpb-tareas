@@ -55,12 +55,18 @@ function dibujar(){
     lienzo.drawImage(fondo.imagen, 0, 0);
   }
   if(vaca.carga){
+    let x = numAleatorio(0, 420);
+    let y = numAleatorio(0, 420);
     lienzo.drawImage(vaca.imagen, x, y);
   }
   if(cerdo.carga){
+    let x = numAleatorio(0, 420);
+    let y = numAleatorio(0, 420);
     lienzo.drawImage(cerdo.imagen, x, y);
   }
   if(pollo.carga){
+    let x = numAleatorio(0, 420);
+    let y = numAleatorio(0 , 420);
     lienzo.drawImage(pollo.imagen, x, y);
   }
 }
