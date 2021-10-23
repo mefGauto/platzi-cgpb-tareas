@@ -30,24 +30,39 @@ let pollo = {
   carga: false
 };
 pollo.imagen = new Image();
-pollo.src.imagen = pollo.url;
+pollo.imagen.src = pollo.url;
 pollo.imagen.addEventListener('load', cargarPollos);
 
 function cargarFondo(){
   fondo.carga = true;
+  dibujar();
 }
 function cargarVacas(){
   vaca.carga = true;
+  dibujar();
 }
 function cargarCerdos(){
   cerdo.carga = true;
+  dibujar();
 }
 function cargarPollos(){
   pollo.carga = true;
+  dibujar();
 }
 
 function dibujar(){
-  lienzo.drawImage(fondo, 0, 0);
+  if (fondo.carga == true){
+    lienzo.drawImage(fondo.imagen, 0, 0);
+  }
+  if(vaca.carga){
+    lienzo.drawImage(vaca.imagen, x, y);
+  }
+  if(cerdo.carga){
+    lienzo.drawImage(cerdo.imagen, x, y);
+  }
+  if(pollo.carga){
+    lienzo.drawImage(pollo.imagen, x, y);
+  }
 }
 
 function numAleatorio(min, max){
