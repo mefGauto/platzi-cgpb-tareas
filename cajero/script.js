@@ -10,7 +10,7 @@ caja.push( new Billete(50, 10) );
 caja.push( new Billete(20, 20) );
 caja.push( new Billete(10, 30) );
 
-let dinero = 210;
+let dinero;
 
 let entregado = [];
 
@@ -22,6 +22,10 @@ let b = document.querySelector('#extraer');
 b.addEventListener('click', entregarDinero);
 
 function entregarDinero(){
+
+    let t = document.querySelector('#plata');
+    dinero = parseInt(t.value);
+
     for(let bi of caja){
 
         if(dinero > 0){
@@ -33,13 +37,12 @@ function entregarDinero(){
                 papeles = div;
             }
 
-            entregado.push( new Billete(bi.valor, papeles) )
-            dinero = dinero - (bi.valor * papeles)
-
+        entregado.push( new Billete(bi.valor, papeles) );
+        dinero = dinero - (bi.valor * papeles);
         }
     }
     if (dinero > 0){
-        console.log('Si me pones mas plata mejor pa')
+        console.log('Si me pones mas plata mejor pa');
     }
     console.log(entregado);
 }
