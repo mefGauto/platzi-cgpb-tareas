@@ -6,9 +6,12 @@ class Billete{
 }
 
 let caja = [];
+caja.push( new Billete(500, 2) );
+caja.push( new Billete(100, 5) );
 caja.push( new Billete(50, 10) );
-caja.push( new Billete(20, 20) );
-caja.push( new Billete(10, 30) );
+caja.push( new Billete(20, 10) );
+caja.push( new Billete(10, 20) );
+caja.push( new Billete(5, 30) );
 
 let dinero;
 
