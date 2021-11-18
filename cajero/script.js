@@ -1,17 +1,32 @@
+let imagenes = [];
+imagenes['500'] = 'img/100.jpeg';
+
 class Billete{
     constructor(v,c){
-        this.valor = v,
+        this.imagen = new Image();
+        this.valor = v;
         this.cantidad = c;
+
+        this.imagen.src = imagenes[this.valor];
     }
 }
 
+let b500 = new Billete(500, 2);
+let b100 = new Billete(100, 5);
+let b50 = new Billete(50, 10);
+let b20 = new Billete(20, 10);
+let b10 = new Billete(10, 20);
+let b5 = new Billete(5, 30);
+
 let caja = [];
-caja.push( new Billete(500, 2) );
-caja.push( new Billete(100, 5) );
-caja.push( new Billete(50, 10) );
-caja.push( new Billete(20, 10) );
-caja.push( new Billete(10, 20) );
-caja.push( new Billete(5, 30) );
+caja.push(b500);
+caja.push(b100);
+caja.push(b50);
+caja.push(b20);
+caja.push(b10);
+caja.push(b5);
+
+let bi; 
 
 let dinero;
 
@@ -29,7 +44,8 @@ let b = document.querySelector('#extraer');
 b.addEventListener('click', entregarDinero);
 
 function entregarDinero(){
-    let bi;
+
+    
     let t = document.querySelector('#plata');
     dinero = parseInt(t.value);
 
@@ -53,8 +69,12 @@ function entregarDinero(){
     }else{
         for(let e of entregado)
         {
-            r.innerHTML = r.innerHTML + e.cantidad + ' billetes de $' + e.valor + '<br />';
-            
+          if(e.cantidad > 0) { 
+            for(bi = 1; bi <=e.cantidad; bi++){
+                r.innerHTML += "<img src=" + "e.imagen.src" + "/>" + "<br />";
+            }
+            r.innerHTML += + e.cantidad + ' billetes de $' + e.valor + '<br />';
+          }
         }
     }
 }
