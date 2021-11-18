@@ -46,12 +46,12 @@ function entregarDinero(){
         }
     }
     if (dinero > 0){
-        console.log('Si me pones mas plata mejor pa');
+        r.innerHTML = 'Si me pones mas plata mejor pa';
     }else{
         for(let e of entregado)
         {
-            let billeteEntregado = ( e.cantidad + ' billetes de $' + e.valor + '<br />' );
-            r.append(billeteEntregado);
+            r.innerHTML = r.innerHTML + e.cantidad + ' billetes de $' + e.valor + '<br />';
+            
         }
     }
 }
